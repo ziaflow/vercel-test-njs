@@ -1,18 +1,25 @@
 ---
 ---
 
-<p class="odyssey-logo">Odyssey</p>
+<div class="logo-wrapper">
+    <img 
+        src="https://ziaflow.com/wp-content/uploads/2025/10/Generated-Image-October-06-2025-7_21PM-8.webp"
+        alt="ZiaFlow Logo"
+        class="ziaflow-logo"
+    />
+</div>
 
 <style>
-	.odyssey-logo {
+	.logo-wrapper {
 		width: fit-content;
 		margin: 0;
-		font-family: var(--theme-font-family-serif);
-    font-size: var(--font-size-md);
-		color: inherit;
 	}
-	.odyssey-logo:hover {
-		text-decoration: underline;
-		cursor: pointer;
+	.ziaflow-logo {
+		height: 40px;
+		width: auto;
+		transition: transform var(--theme-transition);
+	}
+	.logo-wrapper:hover .ziaflow-logo {
+		transform: scale(1.05);
 	}
 </style>

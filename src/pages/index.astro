@@ -1,53 +1,162 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
-
+import { Container, Button } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import { TextSection, ThreeColumnTextSection } from '@components/odyssey-theme';
+import LeadForm from '../components/forms/LeadForm.astro';
 ---
 
+<style>
+	.hero-text {
+		max-width: 600px;
+		margin: 0 auto 2rem;
+	}
+
+	.hero-btns {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.feature-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin: 2rem 0;
+	}
+
+	.feature-item {
+		padding: 1.5rem;
+		border-radius: 8px;
+		background: var(--theme-surface-1);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+
+	.feature-item h4 {
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	.services-section {
+		text-align: center;
+		padding: 4rem 0;
+	}
+
+	.services-section h2 {
+		margin-bottom: 3rem;
+	}
+
+	.form-section {
+		text-align: center;
+		padding: 4rem 0;
+		margin: 4rem 0;
+	}
+
+	.form-section h2 {
+		margin-bottom: 1rem;
+		color: var(--theme-primary);
+	}
+
+	.form-section p {
+		margin-bottom: 2rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	:global(.btn) {
+		background-color: var(--theme-primary);
+		color: var(--theme-on-primary);
+		text-decoration: none;
+		padding: 0.75rem 1.5rem;
+		border-radius: 4px;
+		display: inline-block;
+		transition: all 0.2s ease-in-out;
+	}
+
+	:global(.btn:hover) {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+</style>
+
 <Layout>
-	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
+	<HomeHeroSection>
+		<div slot="text-container">
+			<h1>Your Partner in Digital Transformation</h1>
+			<p>We Build Digital Solutions That Drive Measurable Growth</p>
+			<p class="hero-text">
+				ZiaFlow empowers businesses in Phoenix and beyond by combining expert strategy, creativity, and technology. 
+				We don't just offer services; we deliver results.
 			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
+			<div class="hero-btns">
+				<Button href="/company/contact" customIcon>Get Your Free Consultation</Button>
 			</div>
+		</div>
+	</HomeHeroSection>
+
+	<Container>
+		<TextSection>
+			<h2>Why Choose ZiaFlow?</h2>
+			<h3>Proven Expertise, Tangible Results</h3>
+			<div class="feature-grid">
+				<div class="feature-item">
+					<h4>Custom Solutions</h4>
+					<p>We craft personalized strategies tailored to your unique business goals. No cookie-cutter approaches here.</p>
+				</div>
+				<div class="feature-item">
+					<h4>Comprehensive Services</h4>
+					<p>From SEO and web development to advanced automation, we are your all-in-one partner for digital excellence.</p>
+				</div>
+				<div class="feature-item">
+					<h4>Local & Global</h4>
+					<p>As a Phoenix-based agency, we offer dedicated local service while leveraging global resources and cutting-edge technology.</p>
+				</div>
+				<div class="feature-item">
+					<h4>Proven Growth</h4>
+					<p>Our clients see the difference with increased traffic, higher conversion rates, and streamlined operations that boost their bottom line.</p>
+				</div>
+			</div>
+		</TextSection>
+	</Container>
+
+	<Container>
+		<section class="services-section">
+			<h2>What We Do</h2>
+			<ThreeColumnTextSection>
+				<div slot="column-1-body">
+					<h3>Digital Marketing & SEO</h3>
+					<p>
+						Dominate search rankings and attract high-quality traffic. Our services include Local SEO, 
+						PPC, Google Marketing, social media, and content strategy to enhance your visibility.
+					</p>
+				</div>
+				<div slot="column-2-body">
+					<h3>Web Development & E-commerce</h3>
+					<p>
+						We build stunning, user-friendly websites and powerful Shopify e-commerce platforms 
+						designed to convert visitors into loyal customers.
+					</p>
+				</div>
+				<div slot="column-3-body">
+					<h3>Automation & Analytics</h3>
+					<p>
+						Streamline your operations with custom workflow automation, improve customer engagement, 
+						and make data-driven decisions with our advanced analytics and reporting.
+					</p>
+				</div>
+			</ThreeColumnTextSection>
 		</section>
 	</Container>
 
 	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-				</FeatureCard>
-				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-				</FeatureCard>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					title="Blog Post"
-          imgSrc="/assets/images/home/screenshots/blog-post"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
+		<section class="form-section">
+			<h2>Speak with ZiaFlow Today</h2>
+			<p>Take the first step towards transforming your business. Fill out the form below and we'll get back to you within 24 hours.</p>
+			<LeadForm />
+		</section>
+	</Container>
 				</FeatureCard>
 			</div>
 		</section>

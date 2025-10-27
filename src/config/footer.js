@@ -1,17 +1,17 @@
 export const footerSocials = [
   {
     name: 'Twitter',
-    url: 'https://twitter.com/jaydanurwin',
+    url: 'https://twitter.com/ziaflow',
     icon: "mdi:twitter",
   },
   {
     name: 'Youtube',
-    url: 'https://youtube.com/@jaydanurwin',
+    url: 'https://youtube.com/@ziaflow',
     icon: "mdi:youtube",
   },
   {
     name: 'Github',
-    url: 'https://github.com/jaydanurwin',
+    url: 'https://github.com/ziaflow',
     icon: "mdi:github",
   },
   {
@@ -23,20 +23,20 @@ export const footerSocials = [
 
 export const footerLists = [
 	{
-		title: 'Landing Pages',
+		title: 'Services',
 		items: [
 			{
-				title: 'Landing Page 1',
-				slug: '/landing-pages/landing-1',
+				title: 'AI Development',
+				slug: '/services/ai-development',
 			},
 			{
-				title: 'Landing Page 2',
-				slug: '/landing-pages/landing-2',
+				title: 'Web Design',
+				slug: '/services/web-design',
 			},
-      // {
-			// 	title: 'Landing Page 3',
-			// 	slug: '/landing-pages/landing-3',
-			// },
+			{
+				title: 'Marketing Automation',
+				slug: '/services/marketing-automation',
+			},
 		],
 	},
 	{
@@ -44,7 +44,7 @@ export const footerLists = [
 		items: [
 			{
 				title: 'About',
-				slug: '/company/about',
+				slug: '/ziaflow/about',
 			},
 			{
 				title: 'Blog',
@@ -52,7 +52,7 @@ export const footerLists = [
 			},
 			{
 				title: 'Contact',
-				slug: '/company/contact',
+				slug: '/ziaflow/contact',
 			},
 		],
 	},

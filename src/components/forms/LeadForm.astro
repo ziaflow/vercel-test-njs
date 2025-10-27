@@ -1,0 +1,75 @@
+---
+import { Button } from '@components/odyssey-theme';
+import FormInput from '../form-fields/FormInput.astro';
+import FormTextarea from '../form-fields/FormTextarea.astro';
+---
+
+<form name="lead-collection" method="POST" data-netlify="true" class="lead-form">
+  <div class="form-grid">
+    <FormInput type="text" label="First Name" name="first_name" placeholder="John" required />
+    <FormInput type="text" label="Last Name" name="last_name" placeholder="Doe" required />
+    <FormInput type="text" label="Company Name" name="company_name" placeholder="Your Company" required />
+    <FormInput type="email" label="Email" name="email" placeholder="john@example.com" required />
+    <FormInput type="tel" label="Phone" name="phone" placeholder="(555) 555-5555" required />
+    <FormTextarea label="Notes" name="notes" placeholder="Tell us about your project..." />
+  </div>
+  <div class="form-submit">
+    <Button customIcon>Submit</Button>
+  </div>
+</form>
+
+<style>
+  .lead-form {
+    background: var(--theme-surface-1);
+    padding: 2rem;
+    border-radius: var(--theme-shape-radius);
+    margin-top: 2rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .form-grid :global(.textarea) {
+    grid-column: span 2;
+  }
+
+  .form-submit {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-grid :global(.textarea) {
+      grid-column: span 1;
+    }
+  }
+
+  :global(.form-input),
+  :global(.form-textarea) {
+    background: var(--theme-bg);
+    border: 2px solid var(--theme-primary);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    color: var(--theme-on-bg);
+  }
+
+  :global(.form-input:focus),
+  :global(.form-textarea:focus) {
+    outline: none;
+    border-color: var(--theme-primary-hover);
+  }
+
+  :global(.form-label) {
+    color: var(--theme-on-bg);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+</style>
